@@ -1,0 +1,23 @@
+# Nix
+result
+result-*
+
+# macOS
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# VS Code
+.vscode/
+
+# Direnv
+.direnv/
+
+# Environment files
+.env
+.env.*
+
+# Temporary files
+*.tmp
