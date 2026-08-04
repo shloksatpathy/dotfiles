@@ -2,6 +2,11 @@
 
 {
   home.packages = with pkgs; [
+
+    zsh
+    neovim
+
+    nodejs_22
     wget
     curl
     unzip

@@ -10,6 +10,11 @@
   ../../modules/desktop.nix
 
   ../../modules/programs/git.nix
+  ../../modules/programs/starship.nix
+  ../../modules/programs/neovim.nix
+  ../../modules/programs/fzf.nix
+  ../../modules/programs/wezterm.nix
+  ../../modules/programs/zoxide.nix
   ../../modules/programs/terminal.nix
 ]; 
 
