@@ -12,6 +12,9 @@
     unzip
     zip
 
+    xclip
+    wl-clipboard
+
     tree
     eza
     bat
