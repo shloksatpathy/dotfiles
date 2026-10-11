@@ -16,7 +16,7 @@
 
       push.autoSetupRemote = true;
 
-      core.editor = "code --wait";
+      core.editor = "nvim";
 
       color.ui = "auto";
     };

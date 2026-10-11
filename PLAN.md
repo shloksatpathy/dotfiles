@@ -3,10 +3,10 @@
 Roadmap for the dotfiles repo, ordered by value against effort.
 
 ## 1. Clean up (small)
-- [ ] **`terminal.nix`:** it's an empty stub that overlaps `wezterm.nix` and `shell.nix`. Delete it, or give it a real purpose, and drop it from `home.nix` and the README's stub list.
-- [ ] **`git.nix`:** `userName` and `userEmail` are deprecated in newer Home Manager, in favor of `settings.user.*`. Check whether `home-manager switch` warns about it.
-- [ ] **`core.editor`:** it's `code --wait`, but Neovim is the main editor. Switch to `nvim` to make the setup self-contained.
-- [ ] **README:** fill in the `<repo-url>` placeholder with `git@github.com:shloksatpathy/dotfiles.git`.
+- [x] **`terminal.nix`:** deleted the empty stub and removed it from `home.nix` and the README.
+- [x] **`git.nix`:** checked. `settings.*` doesn't exist in `release-25.05`, so `userName` and `userEmail` stay until the Home Manager pin is upgraded, then move to `settings.user.*`.
+- [x] **`core.editor`:** switched to `nvim`. Removed the VS Code note from the README.
+- [x] **README:** filled in the clone URL.
 
 ## 2. Neovim (the biggest gap)
 The config has only a colorscheme and Treesitter. Add each of these as a separate file in `lua/plugins/`:

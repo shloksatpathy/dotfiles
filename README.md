@@ -6,7 +6,7 @@ Personal development environment managed with Nix + Home Manager, targeting **Ub
 
 - **Nix / Home Manager**: `flake.nix`, pinned to `nixos-25.05` / `home-manager release-25.05`
 - **Zsh**: completion, autosuggestions, syntax highlighting, Starship prompt, zoxide, fzf
-- **Git**: identity and defaults (`main` default branch, auto-prune, auto-setup remote on push)
+- **Git**: identity and defaults (`main` default branch, auto-prune, auto-setup remote on push, Neovim as the commit editor)
 - **WezTerm**: modular Lua config (appearance, fonts, keys, launch)
 - **Neovim**: Lazy.nvim, Treesitter, Rosé Pine (moon) colorscheme
 - **Clipboard**: `xclip` (X11) and `wl-clipboard` (Wayland)
@@ -26,7 +26,6 @@ modules/                 # home-manager modules
   programs/              # per-program modules
     git.nix, starship.nix, fzf.nix, zoxide.nix   # enabled via home-manager
     neovim.nix, wezterm.nix                      # symlink configs from home/.config
-    terminal.nix                                 # stub
 home/.config/            # raw config files symlinked into ~/.config
   nvim/                  # init.lua, lua/config/*, lua/plugins/*
   wezterm/               # wezterm.lua, config/*
@@ -79,7 +78,7 @@ GNOME custom keybindings are declared in `modules/desktop.nix` through `dconf.se
 Prerequisites: Nix installed with flakes enabled.
 
 ```sh
-git clone <repo-url> ~/dotfiles
+git clone git@github.com:shloksatpathy/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # first run (home-manager not yet installed)
@@ -98,9 +97,8 @@ home-manager switch --flake .#ideapad
 
 ## Notes
 
-- Git's `core.editor` is set to `code --wait`, so VS Code needs to be installed separately.
 - WezTerm itself isn't installed by this flake. Only its config is managed here.
 
 ## Status
 
-🚧 Under construction. `development.nix`, `environment.nix`, and `programs/terminal.nix` are stubs pending configuration.
+🚧 Under construction. `development.nix` and `environment.nix` are stubs pending configuration.

@@ -15,7 +15,6 @@
   ../../modules/programs/fzf.nix
   ../../modules/programs/wezterm.nix
   ../../modules/programs/zoxide.nix
-  ../../modules/programs/terminal.nix
 ]; 
 
   home.username = "shlok";
