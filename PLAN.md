@@ -10,11 +10,11 @@ Roadmap for the dotfiles repo, ordered by value against effort.
 
 ## 2. Neovim (the biggest gap)
 The config has only a colorscheme and Treesitter. Add each of these as a separate file in `lua/plugins/`:
-- [ ] **Fuzzy finding:** telescope.nvim or fzf-lua. `ripgrep`, `fd` and `fzf` are already installed.
-- [ ] **LSP:** nvim-lspconfig, plus servers for C/C++, Python, Lua and Nix (`clangd`, `pyright` or `ruff`, `lua-language-server`, `nil` or `nixd`). Install the servers through Nix rather than Mason so they stay reproducible.
-- [ ] **Completion:** blink.cmp or nvim-cmp.
-- [ ] **Formatting and linting:** conform.nvim, with `stylua`, `nixfmt` and `ruff` from Nix.
-- [ ] **Quality of life:** a file explorer (oil.nvim), gitsigns, a statusline, which-key, and `clipboard=unnamedplus` to use the `xclip` and `wl-clipboard` packages.
+- [x] **Fuzzy finding:** fzf-lua (`<leader>ff/fg/fb/fh/fr`).
+- [x] **LSP:** clangd, pyright, ruff, lua_ls, nil_ls from Nix; `gd`, `gD`, `<leader>d` plus Neovim's built-in `gr*`/`K`.
+- [x] **Completion:** blink.cmp.
+- [x] **Formatting and linting:** conform.nvim with format-on-save (stylua, ruff, nixfmt, clang-format); ruff LSP handles Python linting.
+- [x] **Quality of life:** oil.nvim (`-`), gitsigns, lualine, which-key; `clipboard=unnamedplus` was already set.
 
 ## 3. Fill the stub modules
 - [ ] **`development.nix`:** toolchains (gcc/clang, cmake, python3 with uv, rustup or Rust, `gh`, `direnv` with `nix-direnv`, `lazygit`).

@@ -13,4 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  -- the config dir is a read-only Nix store symlink, so keep the lockfile in data
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
+})

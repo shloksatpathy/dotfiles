@@ -30,5 +30,14 @@
     yq-go
 
     fastfetch
+
+    # Neovim language servers and formatters (used by lua/plugins/lsp.lua, format.lua)
+    clang-tools
+    pyright
+    ruff
+    lua-language-server
+    nil
+    stylua
+    nixfmt-rfc-style
   ];
 }

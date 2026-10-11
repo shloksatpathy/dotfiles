@@ -8,7 +8,7 @@ Personal development environment managed with Nix + Home Manager, targeting **Ub
 - **Zsh**: completion, autosuggestions, syntax highlighting, Starship prompt, zoxide, fzf
 - **Git**: identity and defaults (`main` default branch, auto-prune, auto-setup remote on push, Neovim as the commit editor)
 - **WezTerm**: modular Lua config (appearance, fonts, keys, launch)
-- **Neovim**: Lazy.nvim, Treesitter, Rosé Pine (moon) colorscheme
+- **Neovim**: Lazy.nvim, Treesitter, LSP, completion, formatting, fzf-lua, Rosé Pine (moon) colorscheme
 - **Clipboard**: `xclip` (X11) and `wl-clipboard` (Wayland)
 - **Fonts**: Hack Nerd Font, Noto (incl. CJK and emoji)
 
@@ -43,6 +43,7 @@ home/.config/            # raw config files symlinked into ~/.config
 | Monitoring | btop, htop |
 | Data       | jq, yq-go |
 | Misc       | fastfetch |
+| Neovim tooling | clang-tools, pyright, ruff, lua-language-server, nil, stylua, nixfmt-rfc-style |
 
 ## Shell
 
@@ -63,6 +64,20 @@ Nix is loaded from `.zshenv` on every zsh session. This machine's `/etc/zsh/zpro
 
 - Launches `zsh -l` in a 120×32 window
 - `Alt+Enter` toggles fullscreen (default keybindings are kept)
+
+## Neovim
+
+Plugins live in `home/.config/nvim/lua/plugins/`, one file per concern. Leader is `Space`.
+
+| File | Provides |
+|------|----------|
+| `fzf.lua` | fzf-lua: `<leader>ff` files, `fg` grep, `fb` buffers, `fh` help, `fr` resume |
+| `lsp.lua` | nvim-lspconfig for clangd, pyright, ruff, lua_ls, nil_ls; `gd`, `gD`, `<leader>d` |
+| `completion.lua` | blink.cmp |
+| `format.lua` | conform.nvim, formats on save; `<leader>cf` formats manually |
+| `ui.lua` | oil.nvim (`-`), gitsigns, lualine, which-key |
+
+Language servers and formatters come from Nix (`modules/packages.nix`), not Mason. The config directory is a read-only Nix store symlink, so `lazy-lock.json` is kept in `~/.local/share/nvim/` instead. Flakes only see git-tracked files, so `git add` new config files before running `home-manager switch`.
 
 ## Desktop shortcuts
 
