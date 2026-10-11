@@ -71,7 +71,7 @@ GNOME custom keybindings are declared in `modules/desktop.nix` through `dconf.se
 | Shortcut | Action |
 |----------|--------|
 | `Ctrl+Alt+Space` | Launch WezTerm |
-| `Ctrl+Shift+M` | Toggle Do Not Disturb (flips `org.gnome.desktop.notifications show-banners`) |
+| `Ctrl+Shift+M` | Toggle Do Not Disturb (flips `show-banners` and WezTerm's per-app notification switch, because WezTerm toasts such as Claude Code's still showed with banners off) |
 
 ## Usage
 

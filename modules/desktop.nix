@@ -2,17 +2,23 @@
 
 let
   # Flip GNOME's Do Not Disturb. `show-banners` is what the DND switch in the
-  # notification tray controls. Uses the system gsettings so it sees the
-  # system's schemas rather than the ones from nixpkgs' glib.
+  # notification tray controls. WezTerm's toasts (e.g. Claude Code's terminal
+  # notifications) still get through it, so its per-app switch is flipped too.
+  # Uses the system gsettings so it sees the system's schemas rather than the
+  # ones from nixpkgs' glib.
   dndToggle = pkgs.writeShellScript "dnd-toggle" ''
     gsettings=/usr/bin/gsettings
-    key="org.gnome.desktop.notifications show-banners"
+    banners="org.gnome.desktop.notifications show-banners"
+    wezterm="org.gnome.desktop.notifications.application:/org/gnome/desktop/notifications/application/org-wezfurlong-wezterm/ enable"
 
-    if [ "$($gsettings get $key)" = "true" ]; then
-      $gsettings set $key false
+    if [ "$($gsettings get $banners)" = "true" ]; then
+      state=false
     else
-      $gsettings set $key true
+      state=true
     fi
+
+    $gsettings set $banners $state
+    $gsettings set $wezterm $state
   '';
 
   kb = "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings";
