@@ -21,7 +21,8 @@ modules/                 # home-manager modules
   packages.nix           # CLI packages (see below)
   fonts.nix              # Nerd Fonts + Noto fonts
   shell.nix              # zsh setup, aliases, history, Nix PATH fix
-  development.nix, environment.nix, desktop.nix  # stubs, not yet configured
+  desktop.nix            # GNOME keybindings via dconf (Do Not Disturb toggle, WezTerm launcher)
+  development.nix, environment.nix  # stubs, not yet configured
   programs/              # per-program modules
     git.nix, starship.nix, fzf.nix, zoxide.nix   # enabled via home-manager
     neovim.nix, wezterm.nix                      # symlink configs from home/.config
@@ -64,6 +65,15 @@ Nix is loaded from `.zshenv` on every zsh session. This machine's `/etc/zsh/zpro
 - Launches `zsh -l` in a 120×32 window
 - `Alt+Enter` toggles fullscreen (default keybindings are kept)
 
+## Desktop shortcuts
+
+GNOME custom keybindings are declared in `modules/desktop.nix` through `dconf.settings`. Home Manager owns the whole custom keybinding list, so any new shortcut has to be added there, not through GNOME Settings.
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl+Alt+Space` | Launch WezTerm |
+| `Ctrl+Shift+M` | Toggle Do Not Disturb (flips `org.gnome.desktop.notifications show-banners`) |
+
 ## Usage
 
 Prerequisites: Nix installed with flakes enabled.
@@ -93,4 +103,4 @@ home-manager switch --flake .#ideapad
 
 ## Status
 
-🚧 Under construction. `development.nix`, `environment.nix`, `desktop.nix`, and `programs/terminal.nix` are stubs pending configuration.
+🚧 Under construction. `development.nix`, `environment.nix`, and `programs/terminal.nix` are stubs pending configuration.
