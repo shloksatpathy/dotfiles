@@ -86,7 +86,12 @@ GNOME custom keybindings are declared in `modules/desktop.nix` through `dconf.se
 | Shortcut | Action |
 |----------|--------|
 | `Ctrl+Alt+Space` | Launch WezTerm |
+| `Super+L` | Lock the screen (GNOME's built-in action; also locks after 5 minutes idle) |
 | `Ctrl+Shift+M` | Toggle Do Not Disturb (flips `show-banners` and WezTerm's per-app notification switch, because WezTerm toasts such as Claude Code's still showed with banners off) |
+
+## Wallpaper and lock screen
+
+Put the image at `wallpapers/wallpaper.jpg` (and `git add` it). `modules/desktop.nix` copies it to `~/.local/share/wallpapers/` and sets it as the desktop and lock screen background.
 
 ## Usage
 

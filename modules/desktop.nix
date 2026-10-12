@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   # Flip GNOME's Do Not Disturb. `show-banners` is what the DND switch in the
@@ -21,11 +21,33 @@ let
     $gsettings set $wezterm $state
   '';
 
+  # Copied to a stable path, since store paths change on every rebuild.
+  wallpaper = "file://${config.home.homeDirectory}/.local/share/wallpapers/wallpaper.jpg";
+
   kb = "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings";
 in
 {
+  home.file.".local/share/wallpapers/wallpaper.jpg".source = ../wallpapers/wallpaper.jpg;
+
   dconf.settings = {
+    # The lock screen uses the same wallpaper.
+    "org/gnome/desktop/background" = {
+      picture-uri = wallpaper;
+      picture-uri-dark = wallpaper;
+      picture-options = "zoom";
+    };
+
+    "org/gnome/desktop/screensaver" = {
+      lock-enabled = true;
+      lock-delay = lib.hm.gvariant.mkUint32 0;
+      picture-uri = wallpaper;
+    };
+
+    # Blank the screen after 5 minutes, which then locks it.
+    "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 300;
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
+      screensaver = [ "<Super>l" ];
       custom-keybindings = [
         "/${kb}/custom0/"
         "/${kb}/custom1/"
