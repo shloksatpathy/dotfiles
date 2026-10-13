@@ -18,7 +18,7 @@ The config has only a colorscheme and Treesitter. Add each of these as a separat
 
 ## 3. Fill the stub modules
 - [x] **`development.nix`:** toolchains (gcc, cmake, python3 with uv, rustup or Rust, `gh`, `direnv` with `nix-direnv`, `lazygit`).
-- [ ] **`environment.nix`:** `EDITOR`, `VISUAL`, `PAGER` (bat), and XDG settings.
+- [x] **`environment.nix`:** `EDITOR`, `VISUAL`, `PAGER` (bat), and XDG settings.
 - [ ] **`desktop.nix`:** only add it if GUI or desktop configuration is wanted. Otherwise remove it.
 
 ## 4. Shell and terminal polish
