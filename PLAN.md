@@ -17,7 +17,7 @@ The config has only a colorscheme and Treesitter. Add each of these as a separat
 - [x] **Quality of life:** oil.nvim (`-`), gitsigns, lualine, which-key; `clipboard=unnamedplus` was already set.
 
 ## 3. Fill the stub modules
-- [ ] **`development.nix`:** toolchains (gcc/clang, cmake, python3 with uv, rustup or Rust, `gh`, `direnv` with `nix-direnv`, `lazygit`).
+- [x] **`development.nix`:** toolchains (gcc, cmake, python3 with uv, rustup or Rust, `gh`, `direnv` with `nix-direnv`, `lazygit`).
 - [ ] **`environment.nix`:** `EDITOR`, `VISUAL`, `PAGER` (bat), and XDG settings.
 - [ ] **`desktop.nix`:** only add it if GUI or desktop configuration is wanted. Otherwise remove it.
 
