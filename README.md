@@ -9,6 +9,8 @@ Personal development environment managed with Nix + Home Manager, targeting **Ub
 - **Git**: identity and defaults (`main` default branch, auto-prune, auto-setup remote on push, Neovim as the commit editor)
 - **WezTerm**: modular Lua config (appearance, fonts, keys, launch)
 - **Neovim**: Lazy.nvim, Treesitter, LSP, completion, formatting, fzf-lua, Rosé Pine (moon) colorscheme
+- **Development**: gcc, CMake, Make, Python with uv, rustup, `gh`, lazygit, direnv with nix-direnv
+- **Desktop**: GNOME shortcuts, wallpaper and lock screen settings via dconf
 - **Clipboard**: `xclip` (X11) and `wl-clipboard` (Wayland)
 - **Fonts**: Hack Nerd Font, Noto (incl. CJK and emoji)
 
@@ -21,14 +23,17 @@ modules/                 # home-manager modules
   packages.nix           # CLI packages (see below)
   fonts.nix              # Nerd Fonts + Noto fonts
   shell.nix              # zsh setup, aliases, history, Nix PATH fix
-  desktop.nix            # GNOME keybindings via dconf (Do Not Disturb toggle, WezTerm launcher)
-  development.nix, environment.nix  # stubs, not yet configured
+  desktop.nix            # GNOME via dconf: keybindings, wallpaper, lock screen
+  development.nix        # toolchains, gh, lazygit, direnv
+  environment.nix        # EDITOR, VISUAL, PAGER, XDG
   programs/              # per-program modules
     git.nix, starship.nix, fzf.nix, zoxide.nix   # enabled via home-manager
     neovim.nix, wezterm.nix                      # symlink configs from home/.config
 home/.config/            # raw config files symlinked into ~/.config
   nvim/                  # init.lua, lua/config/*, lua/plugins/*
   wezterm/               # wezterm.lua, config/*
+wallpapers/              # wallpaper.jpg, used for the desktop and lock screen
+PLAN.md                  # roadmap
 ```
 
 ## Packages
@@ -44,6 +49,12 @@ home/.config/            # raw config files symlinked into ~/.config
 | Data       | jq, yq-go |
 | Misc       | fastfetch |
 | Neovim tooling | clang-tools, pyright, ruff, lua-language-server, nil, stylua, nixfmt-rfc-style |
+| Build      | gcc, cmake, gnumake |
+| Python     | python3, uv |
+| Rust       | rustup |
+| Git tools  | gh, lazygit |
+
+`direnv` with `nix-direnv` is enabled in `modules/development.nix`.
 
 ## Shell
 
@@ -59,6 +70,8 @@ Aliases defined in `modules/shell.nix`:
 `~/.npm-global/bin` is added to `PATH` for global npm installs.
 
 Nix is loaded from `.zshenv` on every zsh session. This machine's `/etc/zsh/zprofile` doesn't source `/etc/profile`, so without this step Nix would never be on `PATH`.
+
+`modules/environment.nix` sets `EDITOR` and `VISUAL` to `nvim`, `PAGER` to `bat`, and enables XDG base directories.
 
 ## WezTerm
 
@@ -121,4 +134,4 @@ home-manager switch --flake .#ideapad
 
 ## Status
 
-🚧 Under construction. `development.nix` and `environment.nix` are stubs pending configuration.
+🚧 Under construction. Remaining work is tracked in `PLAN.md`.
