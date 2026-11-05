@@ -33,6 +33,8 @@ home/.config/            # raw config files symlinked into ~/.config
   nvim/                  # init.lua, lua/config/*, lua/plugins/*
   wezterm/               # wezterm.lua, config/*
 wallpapers/              # wallpaper.jpg, used for the desktop and lock screen
+Makefile                 # switch, update and check targets
+.github/workflows/       # CI: builds the Home Manager config on every push to main
 PLAN.md                  # roadmap
 ```
 

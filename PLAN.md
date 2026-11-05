@@ -27,7 +27,7 @@ The config has only a colorscheme and Treesitter. Add each of these as a separat
 - [x] Check how `bat` and `eza` behave as `cat` and `ls` replacements in scripts and pipes. Fine in both. Fixed `PAGER` and `MANPAGER`, and removed the `grep` alias because `rg` rejects `grep` flags such as `-E`.
 
 ## 5. Repo hygiene
-- [ ] Add a `.gitattributes` and a `nix flake check` step in CI. A GitHub Action that runs `nix build .#homeConfigurations.ideapad.activationPackage` would catch broken commits.
+- [x] Added a `.gitattributes` and a GitHub Action that runs `nix build .#homeConfigurations.ideapad.activationPackage` to catch broken commits. No `nix flake check` step, because the flake defines no `checks`.
 - [x] Added a `Makefile` with `switch`, `update` and `check` targets.
 - [x] Removed the empty `scripts/` and `lib/` directories (`wallpapers/` is used).
 - [ ] If a second machine is added, split `hosts/` into shared and per-host modules.
