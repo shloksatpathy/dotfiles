@@ -29,7 +29,7 @@ The config has only a colorscheme and Treesitter. Add each of these as a separat
 ## 5. Repo hygiene
 - [ ] Add a `.gitattributes` and a `nix flake check` step in CI. A GitHub Action that runs `nix build .#homeConfigurations.ideapad.activationPackage` would catch broken commits.
 - [ ] Consider a `justfile` or `Makefile` with `switch`, `update` and `check` targets.
-- [ ] Decide whether `scripts/` and `lib/` should exist (`wallpapers/` is now used). Remove them from the layout if there's no plan for them.
+- [x] Removed the empty `scripts/` and `lib/` directories (`wallpapers/` is used).
 - [ ] If a second machine is added, split `hosts/` into shared and per-host modules.
 
 ## Suggested order
