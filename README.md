@@ -64,14 +64,15 @@ Aliases defined in `modules/shell.nix`:
 |-------|---------|
 | `ls`, `ll`, `la` | `eza`, `eza -lah`, `eza -a` |
 | `cat` | `bat` |
-| `grep` | `rg` |
 | `..`, `...`, `....` | go up 1, 2, or 3 directories |
 
 `~/.npm-global/bin` is added to `PATH` for global npm installs.
 
 Nix is loaded from `.zshenv` on every zsh session. This machine's `/etc/zsh/zprofile` doesn't source `/etc/profile`, so without this step Nix would never be on `PATH`.
 
-`modules/environment.nix` sets `EDITOR` and `VISUAL` to `nvim`, `PAGER` to `bat`, and enables XDG base directories.
+`modules/environment.nix` sets `EDITOR` and `VISUAL` to `nvim`, `PAGER` to `bat --plain`, `MANPAGER` to render man pages through `bat`, and enables XDG base directories.
+
+Git aliases defined in `modules/programs/git.nix`: `st`, `co`, `br`, `lg`.
 
 ## WezTerm
 

@@ -29,6 +29,10 @@
       fi
     '';
 
+    initContent = ''
+      setopt CDABLE_VARS
+    '';
+
     history = {
       size = 100000;
       save = 100000;
@@ -42,8 +46,6 @@
       la = "eza -a";
 
       cat = "bat";
-
-      grep = "rg";
 
       ".." = "cd ..";
       "..." = "cd ../..";
