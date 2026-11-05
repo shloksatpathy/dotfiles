@@ -122,11 +122,12 @@ nix run home-manager/release-25.05 -- switch --flake .#ideapad
 home-manager switch --flake .#ideapad
 ```
 
-To update pinned inputs:
+After the first run, the `Makefile` covers the usual commands:
 
 ```sh
-nix flake update
-home-manager switch --flake .#ideapad
+make switch   # apply the config
+make update   # update pinned inputs (run make switch afterwards)
+make check    # build the config without activating it
 ```
 
 ## Notes
