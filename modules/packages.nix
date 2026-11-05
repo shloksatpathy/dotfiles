@@ -38,6 +38,6 @@
     lua-language-server
     nil
     stylua
-    nixfmt-rfc-style
+    nixfmt
   ];
 }

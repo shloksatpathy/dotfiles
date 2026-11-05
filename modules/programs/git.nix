@@ -4,17 +4,17 @@
   programs.git = {
     enable = true;
 
-    userName = "shloksatpathy";
-    userEmail = "shloke1504@gmail.com";
+    settings = {
+      user.name = "shloksatpathy";
+      user.email = "shloke1504@gmail.com";
 
-    aliases = {
-      st = "status -sb";
-      co = "checkout";
-      br = "branch";
-      lg = "log --oneline --graph --decorate";
-    };
+      alias = {
+        st = "status -sb";
+        co = "checkout";
+        br = "branch";
+        lg = "log --oneline --graph --decorate";
+      };
 
-    extraConfig = {
       init.defaultBranch = "main";
 
       pull.rebase = false;

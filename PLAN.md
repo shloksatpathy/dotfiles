@@ -4,7 +4,7 @@ Roadmap for the dotfiles repo, ordered by value against effort.
 
 ## 1. Clean up (small)
 - [x] **`terminal.nix`:** deleted the empty stub and removed it from `home.nix` and the README.
-- [x] **`git.nix`:** checked. `settings.*` doesn't exist in `release-25.05`, so `userName` and `userEmail` stay until the Home Manager pin is upgraded, then move to `settings.user.*`.
+- [x] **`git.nix`:** moved to `settings.*` after upgrading the pin to `release-26.05`.
 - [x] **`core.editor`:** switched to `nvim`. Removed the VS Code note from the README.
 - [x] **README:** filled in the clone URL.
 

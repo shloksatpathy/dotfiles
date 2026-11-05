@@ -4,7 +4,7 @@ Personal development environment managed with Nix + Home Manager, targeting **Ub
 
 ## Stack
 
-- **Nix / Home Manager**: `flake.nix`, pinned to `nixos-25.05` / `home-manager release-25.05`
+- **Nix / Home Manager**: `flake.nix`, pinned to `nixos-26.05` / `home-manager release-26.05`
 - **Zsh**: completion, autosuggestions, syntax highlighting, Starship prompt, zoxide, fzf
 - **Git**: identity and defaults (`main` default branch, auto-prune, auto-setup remote on push, Neovim as the commit editor)
 - **WezTerm**: modular Lua config (appearance, fonts, keys, launch)
@@ -50,7 +50,7 @@ PLAN.md                  # roadmap
 | Monitoring | btop, htop |
 | Data       | jq, yq-go |
 | Misc       | fastfetch |
-| Neovim tooling | clang-tools, pyright, ruff, lua-language-server, nil, stylua, nixfmt-rfc-style |
+| Neovim tooling | clang-tools, pyright, ruff, lua-language-server, nil, stylua, nixfmt |
 | Build      | gcc, cmake, gnumake |
 | Python     | python3, uv |
 | Rust       | rustup |
@@ -118,7 +118,7 @@ git clone git@github.com:shloksatpathy/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # first run (home-manager not yet installed)
-nix run home-manager/release-25.05 -- switch --flake .#ideapad
+nix run home-manager/release-26.05 -- switch --flake .#ideapad
 
 # subsequent runs
 home-manager switch --flake .#ideapad
