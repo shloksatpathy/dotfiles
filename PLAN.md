@@ -19,10 +19,10 @@ The config has only a colorscheme and Treesitter. Add each of these as a separat
 ## 3. Fill the stub modules
 - [x] **`development.nix`:** toolchains (gcc, cmake, python3 with uv, rustup or Rust, `gh`, `direnv` with `nix-direnv`, `lazygit`).
 - [x] **`environment.nix`:** `EDITOR`, `VISUAL`, `PAGER` (bat), and XDG settings.
-- [ ] **`desktop.nix`:** only add it if GUI or desktop configuration is wanted. Otherwise remove it.
+- [x] **`desktop.nix`:** GNOME keybindings, wallpaper and lock screen settings via dconf.
 
 ## 4. Shell and terminal polish
-- [ ] Add `tmux` or WezTerm multiplexing keybinds (splits, tabs, pane navigation).
+- [x] Terminal multiplexing: using herdr instead of `tmux` or WezTerm keybinds.
 - [x] Add zsh options (`cdable_vars`; history sharing was already on) and a few git aliases.
 - [x] Check how `bat` and `eza` behave as `cat` and `ls` replacements in scripts and pipes. Fine in both. Fixed `PAGER` and `MANPAGER`, and removed the `grep` alias because `rg` rejects `grep` flags such as `-E`.
 

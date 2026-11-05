@@ -132,6 +132,7 @@ home-manager switch --flake .#ideapad
 ## Notes
 
 - WezTerm itself isn't installed by this flake. Only its config is managed here.
+- herdr handles terminal multiplexing. It's installed separately with `nix profile` from its own flake, and its config in `~/.config/herdr/` isn't managed here.
 
 ## Status
 
