@@ -2,6 +2,8 @@
 
 Roadmap for the dotfiles repo, ordered by value against effort.
 
+**Status:** sections 1–5 are done. The only open item is the `hosts/` split, which waits on a second machine.
+
 ## 1. Clean up (small)
 - [x] **`terminal.nix`:** deleted the empty stub and removed it from `home.nix` and the README.
 - [x] **`git.nix`:** moved to `settings.*` after upgrading the pin to `release-26.05`.
@@ -32,8 +34,3 @@ The config has only a colorscheme and Treesitter. Add each of these as a separat
 - [x] Removed the empty `scripts/` and `lib/` directories (`wallpapers/` is used).
 - [ ] If a second machine is added, split `hosts/` into shared and per-host modules.
 
-## Suggested order
-1. Section 1, as one commit.
-2. Neovim: fuzzy finding, LSP and completion, so navigation and code completion work.
-3. `development.nix` and `environment.nix`.
-4. The rest, as needed.
